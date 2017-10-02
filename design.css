@@ -1,0 +1,18 @@
+#media {
+	border-width:5px;
+	border-style: solid;
+}
+
+#person{
+	border-width:5px;
+	border-style: solid;
+	padding: 5px;
+}
+.social{
+	height:50px;
+	width:50px;
+}
+footer{
+	border-width:5px;
+	border-style: solid;
+}
