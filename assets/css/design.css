@@ -1,23 +1,38 @@
 #media {
-	border-width: 1px;
-	border-style: solid;
+	border-left: 5px;
+    border-left-style: solid;
 }
 
 #person{
-	border-width: 1px;
+	border-width:5px;
 	border-style: solid;
-	padding: 1px;
+	padding: 5px;
 }
 .social{
 	height:50px;
 	width:50px;
 }
-body{
-}
 footer{
-	border-width: 1px;
+	border-width:5px;
 	border-style: solid;
 }
-#formDiv{
-	border-width: 1px;
+
+#last{
+	margin-top: 200px;
+}
+
+#bottom{
+	margin-top: 10px;
+}
+
+#paypal{
+	height:150px;
+	width:150px;
+	  display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+form{
+	border-width: 5px;
+	border-style: solid;
 }
