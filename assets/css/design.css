@@ -1,16 +1,23 @@
 #media {
-	border-width:10px;
+	border-width: 1px;
 	border-style: solid;
 }
 
 #person{
-	border-width:5px;
+	border-width: 1px;
 	border-style: solid;
-	padding: 5px;
+	padding: 1px;
 }
 .social{
 	height:50px;
 	width:50px;
 }
 body{
+}
+footer{
+	border-width: 1px;
+	border-style: solid;
+}
+#formDiv{
+	border-width: 1px;
 }
