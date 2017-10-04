@@ -1,19 +1,22 @@
+/*
 //---------- Javascript for Index page ----------//
 
 //---------- FIREBASE ----------//
 
+
 var config = {
-  apiKey: "AIzaSyA_QypGPkcjPtylRDscf7-HQl8ribnFeIs", /* DO WE NEED A DIFFERENT API KEY?*/
+  apiKey: "AIzaSyA_QypGPkcjPtylRDscf7-HQl8ribnFeIs", //DO WE NEED A DIFFERENT API KEY?//
   authDomain: "time-sheet-55009.firebaseapp.com",
   databaseURL: "https://time-sheet-55009.firebaseio.com",
-  projectId: //NEED//
-  storageBucket: "time-sheet-55009.appspot.com"
-  messagingSenderId: //NEED//
+  projectId: "NEED",
+  storageBucket: "time-sheet-55009.appspot.com",
+  messagingSenderId: "NEED"
 };
 
 firebase.initializeApp(config);
 
 var database = firebase.database();
+
 
 //---------- FUNCTIONS ----------//
 
@@ -26,21 +29,37 @@ function clearInput(){
   $("#interests-input").val("");
 
 }
+*/
 
-//
+//Eventbrite
 function populateVolunteer(){
 
+//volunteer input
+  var volunteer = $("#interests-input").val().trim();
+  //Consumer API
+  var token = "VKVUSW3OILCLJSHPXTDU";
+  //queryURL
+  var queryURL = "https://www.eventbriteapi.com/v3/users/me/?token=" + token;
+        //ajax call
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).done(function(response) {
+          console.log(response);
+        });
 
-}
 
-//
+};
+
+/*
+//NYT API and populate articles
 function populateNYT(){
 
 
 
 };
 
-//
+//Twitter API and populate articles
 function populateTwitter(){
   
   //volunteer input
@@ -70,17 +89,27 @@ function populateTwitter(){
 
 };
 
+
+
 //---------- API Calls ----------//
 
 //
 
 
 
-
+*/
 //---------- CLICK EVENTS ----------//
 
 $(".submit-button").on("click", function(event){
 
+  event.preventDefault();
+
+  populateVolunteer();
+
+});
+
+
+/*
   //keeps form from submitting initially
   event.preventDefault();
 
@@ -117,7 +146,6 @@ $(".submit-button").on("click", function(event){
   // Clears all of the text-boxes
   clearInput();
 
-});
 
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
@@ -134,6 +162,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(vEmail);
   console.log(vZipCode);
   console.log(vInterests);
+*/
 
-});
+
   
