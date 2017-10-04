@@ -36,10 +36,11 @@ function populateVolunteer(){
 
 //volunteer input
   var volunteer = $("#interests-input").val().trim();
+
   //Consumer API
   var token = "VKVUSW3OILCLJSHPXTDU";
   //queryURL
-  var queryURL = "https://www.eventbriteapi.com/v3/users/me/?token=" + token;
+  var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token="+token+"&q="+volunteer;
         //ajax call
         $.ajax({
           url: queryURL,
