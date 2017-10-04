@@ -1,16 +1,51 @@
+//---------- Javascript for Index page ----------//
+
+//---------- FIREBASE ----------//
+
 var config = {
   apiKey: "AIzaSyA_QypGPkcjPtylRDscf7-HQl8ribnFeIs", /* DO WE NEED A DIFFERENT API KEY?*/
   authDomain: "time-sheet-55009.firebaseapp.com",
   databaseURL: "https://time-sheet-55009.firebaseio.com",
+  projectId: //NEED//
   storageBucket: "time-sheet-55009.appspot.com"
+  messagingSenderId: //NEED//
 };
 
 firebase.initializeApp(config);
 
 var database = firebase.database();
 
+//---------- FUNCTIONS ----------//
 
-$(".submit-button").on("click", function(event) {
+function populateVolunteer(){
+
+
+}
+
+
+function populateNYT(){
+
+
+
+};
+
+function populateTwitter(){
+
+
+
+};
+
+//---------- API Calls ----------//
+
+
+
+
+
+//---------- CLICK EVENTS ----------//
+
+$(".submit-button").on("click", function(event){
+
+  //keeps form from submitting initially
   event.preventDefault();
 
   // Grabs user input
@@ -18,10 +53,6 @@ $(".submit-button").on("click", function(event) {
   var email = $("#email-input").val().trim();
   var zipCode = $("#zipcode-input").val().trim();
   var volunteer = $("#interests-input").val().trim();
-
-
-
-
 
   // Creates local "temporary" object for holding volunteer data
   var newVolunteer = {
@@ -31,17 +62,11 @@ $(".submit-button").on("click", function(event) {
     vInterests: interests,
   };
 
-  // Uploads volunteer data to the database
-  database.ref().push(newVolunteer);
+  database.ref().push({
+    
+    newVolunteer
 
-  // Logs everything to console
-  console.log(newVolunteer.name);
-  console.log(newVolunteer.email);
-  console.log(newVolunteer.zipCode);
-  console.log(newVolunteer.interests);
-
-  // Alert
-  alert("You were successfully added to the volunteer database"); /* DO WE WANT TO HAVE THIS ALERT */
+    });
 
   // Clears all of the text-boxes
   $("#name-input").val("");
@@ -51,7 +76,6 @@ $(".submit-button").on("click", function(event) {
 
 });
 
-// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   console.log(childSnapshot.val());
@@ -63,9 +87,10 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var vInterests = childSnapshot.val().interests;
 
   // volunteer Info
-  console.log(empName);
-  console.log(empRole);
-  console.log(empStart);
-  console.log(empRate);
+  console.log(vName);
+  console.log(vEmail);
+  console.log(vZipCode);
+  console.log(vInterests);
 
+});
   
