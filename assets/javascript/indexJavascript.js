@@ -32,7 +32,7 @@ function clearInput(){
 */
 
 //Eventbrite
-function populateVolunteer(){
+function populateEventBrite(){
 
 //volunteer input
   var volunteer = $("#interests-input").val().trim();
@@ -40,15 +40,29 @@ function populateVolunteer(){
   //Consumer API
   var token = "VKVUSW3OILCLJSHPXTDU";
   //queryURL
-  var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token="+token+"&q="+volunteer;
+  var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token="+token+"&q="+volunteer+"&sort_by=distance&high_affinity_categories=117";
+
         //ajax call
         $.ajax({
           url: queryURL,
           method: "GET"
         }).done(function(response) {
           console.log(response);
-        });
+        
+        for (var i = 1; i < 4; i++){
+          console.log("-------"+i+"-------");
+          //event url on EventBrite
+          console.log(response.events[i].url);
+          //name of the event
+          console.log(response.events[i].name.text);
+          //event description
+          console.log(response.events[i].description.text);
+          //src url logo of the event
+          console.log(response.events[i].logo.url);
+        };
+        
 
+      });
 
 };
 
@@ -105,7 +119,7 @@ $(".submit-button").on("click", function(event){
 
   event.preventDefault();
 
-  populateVolunteer();
+  populateEventBrite();
 
 });
 
