@@ -17,26 +17,62 @@ var database = firebase.database();
 
 //---------- FUNCTIONS ----------//
 
+// Clears all of the text-boxes
+function clearInput(){
+
+  $("#name-input").val("");
+  $("#email-input").val("");
+  $("#zipcode-input").val("");
+  $("#interests-input").val("");
+
+}
+
+//
 function populateVolunteer(){
 
 
 }
 
-
+//
 function populateNYT(){
 
 
 
 };
 
+//
 function populateTwitter(){
+  
+  //volunteer input
+  var volunteer = $("#interests-input").val().trim();
+  //Consumer API
+  var apiKey = htOiKImfn0A61yArROEWS7mNk;
+  //query URL
+  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+volunteer+"&api_key="+apiKey+"&rating=pg";
 
+  //ajax call
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+      }).done(function(response) {
+
+        console.log(response);
+        //loop through 10 times to generate 10 images
+        for (var i = 0; i < 10; i++){
+
+          //print in social div
+            
+        }
+
+          
+      });
 
 
 };
 
 //---------- API Calls ----------//
 
+//
 
 
 
@@ -68,11 +104,18 @@ $(".submit-button").on("click", function(event){
 
     });
 
+  //API calls
+  //volunteer
+
+
+  //NYT
+
+
+  //twitter
+
+
   // Clears all of the text-boxes
-  $("#name-input").val("");
-  $("#email-input").val("");
-  $("#zipcode-input").val("");
-  $("#interests-input").val("");
+  clearInput();
 
 });
 
