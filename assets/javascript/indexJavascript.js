@@ -1,4 +1,4 @@
-/*
+
 //---------- Javascript for Index page ----------//
 
 //---------- FIREBASE ----------//
@@ -29,7 +29,7 @@ function clearInput(){
   $("#interests-input").val("");
 
 }
-*/
+
 
 //Eventbrite
 function populateEventBrite(){
@@ -61,56 +61,36 @@ function populateEventBrite(){
         for (var i = 1; i < 4; i++){
 
           console.log("-------"+i+"-------");
-          //event url on EventBrite
-          console.log(response.events[i].url);
+          
           //name of the event
           console.log(response.events[i].name.text);
+          var eventName = response.events[i].name.text;
+
+          //event url on EventBrite
+          console.log(response.events[i].url);
+          var eventURL = response.events[i].url;
+
           //event description
           console.log(response.events[i].description.text);
+
           //src url logo of the event
           console.log(response.events[i].logo.url);
+          var eventLogo = response.events[i].logo.url;
 
+          //create a div to hold the events
+          var eventDiv = $("<div>");
+
+          eventDiv.html("<h3>" + eventName + "</h3>");
+
+          eventDiv.attr("data-item", [i]);
+
+          $("#events").append(eventDiv);
+          
         };
+
+
         
       });
-
-};
-
-/*
-//NYT API and populate articles
-function populateNYT(){
-
-
-
-};
-
-//Twitter API and populate articles
-function populateTwitter(){
-  
-  //volunteer input
-  var volunteer = $("#interests-input").val().trim();
-  //Consumer API
-  var apiKey = htOiKImfn0A61yArROEWS7mNk;
-  //query URL
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q="+volunteer+"&api_key="+apiKey+"&rating=pg";
-
-  //ajax call
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-      }).done(function(response) {
-
-        console.log(response);
-        //loop through 10 times to generate 10 images
-        for (var i = 0; i < 10; i++){
-
-          //print in social div
-            
-        }
-
-          
-      });
-
 
 };
 
@@ -122,7 +102,7 @@ function populateTwitter(){
 
 
 
-*/
+
 //---------- CLICK EVENTS ----------//
 
 $(".submit-button").on("click", function(event){
@@ -130,6 +110,8 @@ $(".submit-button").on("click", function(event){
   event.preventDefault();
 
   populateEventBrite();
+
+  clearInput();
 
 });
 
