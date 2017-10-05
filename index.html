@@ -4,7 +4,11 @@
 	<title> Volunteer Pulse Home Page </title>
 
   <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Exo:900|PT+Sans+Caption|Philosopher:400,700" rel="stylesheet">
+
 
   <!-- CSS FILE -->
   <link rel="stylesheet" type="text/css" href="assets/css/design.css">
@@ -50,80 +54,118 @@
     </div>
   </nav>
 
+<!-- Container -->
 <div class="container">
 
-  <div class="row"> <!-- ROW 1 -->
-    <div class="col-lg-12"> <!-- COL 12 -->
-      <!-- JUMBOTRON -->
-    	<div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-3">VOLUNTEER PULSE</h1>
-          <p class="lead"> <img src = "heart.png"> </p>
+  <!-- Row 1 -->
+    <div class="row"> 
+      <div class="col-sm-12"> <!-- COL 12 -->
+
+        <!-- JUMBOTRON -->
+      	<div class="jumbotron jumbotron-fluid text-center">
+          <div class="container">
+            <h1 class="display-3"> Volunteer Pulse <img src = "heart.png" width="150px"> </h1>
+          </div>
         </div>
+
       </div>
     </div>
-  </div>
 
-
-  <!-- FORM -->
-  <form>
-  	<div class = "row"> <!-- ROW 2 -->
-  		<div id="formDiv" class = "col-lg-9"> <!-- COL 9 -->
-        <div class="form-group">
-          <label for="exampleInputEmail1"> Name</label>
-          <input type="email" class="form-control" id="name-input" aria-describedby="emailHelp" placeholder=" Name">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Zip Code</label>
-          <input type="email" class="form-control" id="zipcode-input" aria-describedby="emailHelp" placeholder="Zip Code">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Volunteer-interests</label>
-          <input type="email" class="form-control" id="interests-input" aria-describedby="emailHelp" placeholder="What Are You Interested in Volunteering For?">
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-          <input type="checkbox" class="form-check-input">
-            I Am Okay With My Information Being Shared.
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary submit-button" id = "run-search">Submit</button>
-        <button type="reset" class="btn btn-primary submit-button" id = "run-search">reset</button>
-
+  <!-- Row 2 -->
+    <div class = "row"> 
+      <div class="col-sm-5"> <!-- COL 5 -->
+          
+          <div class="card">
+            <form>
+              <div id="formDiv">
+                <div class="form-group">
+                  <label for="exampleInputEmail1"> Name</label>
+                  <input type="text" class="form-control" id="name-input" placeholder="First Last">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="zipCode">Zip Code</label>
+                  <input type="text" class="form-control" id="zipcode-input" placeholder="Zip Code">
+                </div>
+                <div class="form-group">
+                  <label for="volunteerInterest">Volunteer Interest</label>
+                  <input type="text" class="form-control" id="interests-input" placeholder="What are you passionate about?">
+                </div>
+                <!--<div class="form-check">
+                  <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input">
+                    I Am Okay With My Information Being Shared.
+                  </label>
+                </div>-->
+                <div class="card-footer text-center">
+                  <button type="submit" class="btn btn-primary submit-button" id = "run-search">Submit</button>
+                  <!--<button type="reset" class="btn btn-primary submit-button" id = "run-search"> reset</button>-->
+                </div>
+              </div>
+            </form>
+          </div>
+            
       </div>
-    </form>
+        
 
+      <div class="col-sm-7"> <!-- COL 7 -->
+        
+            <div id="events">
+              <p> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus est pellentesque elit ullamcorper dignissim. Tortor dignissim convallis aenean et. Non quam lacus suspendisse faucibus interdum posuere. Ultricies lacus sed turpis tincidunt. Nec nam aliquam sem et tortor consequat id porta nibh. Molestie ac feugiat sed lectus vestibulum mattis. Vehicula ipsum a arcu cursus vitae congue mauris. Velit dignissim sodales ut eu sem integer vitae justo. Libero volutpat sed cras ornare arcu dui vivamus arcu felis. Eu consequat ac felis donec et. Arcu bibendum at varius vel. Elit duis tristique sollicitudin nibh sit amet commodo. At quis risus sed vulputate odio ut enim blandit volutpat. Nulla porttitor massa id neque aliquam. Suspendisse ultrices gravida dictum fusce. In nisl nisi scelerisque eu ultrices vitae auctor eu. Id consectetur purus ut faucibus pulvinar elementum. Felis eget nunc lobortis mattis aliquam. Nec tincidunt praesent semper feugiat nibh sed pulvinar.
+              </p>
+            </div>
 
-      <div class = "col-lg-3" id = "media"> <!-- COL 3-->
-		    <P> SOCIAL MEDIA</P>
       </div>
 
     </div>
+
+
+  <!-- Row 3 -->
+    <div class = "row row-3"> 
+      <div class="col-sm-9"> <!-- COL 9 -->
+
+            <div id = "news">
+              
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus est pellentesque elit ullamcorper dignissim. Tortor dignissim convallis aenean et. Non quam lacus suspendisse faucibus interdum posuere. Ultricies lacus sed turpis tincidunt. Nec nam aliquam sem et tortor consequat id porta nibh. Molestie ac feugiat sed lectus vestibulum mattis. Vehicula ipsum a arcu cursus vitae congue mauris. Velit dignissim sodales ut eu sem integer vitae justo. Libero volutpat sed cras ornare arcu dui vivamus arcu felis. Eu consequat ac felis donec et. Arcu bibendum at varius vel. Elit duis tristique sollicitudin nibh sit amet commodo. At quis risus sed vulputate odio ut enim blandit volutpat. Nulla porttitor massa id neque aliquam. Suspendisse ultrices gravida dictum fusce. In nisl nisi scelerisque eu ultrices vitae auctor eu. Id consectetur purus ut faucibus pulvinar elementum. Felis eget nunc lobortis mattis aliquam. Nec tincidunt praesent semper feugiat nibh sed pulvinar.
+
+            </div>
+
+      </div>
+
+      <div class="col-sm-3"> <!-- COL 3 -->
     
-    <div class = "row"> 
-    <div class = "col-lg-12" id = "news">
-      tsetttttttttttttttttttt
-    </div>
+        <div id = "media">
+          <p> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus est pellentesque elit ullamcorper dignissim.
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class = "row"> 
-    <div class = "col-lg-12" id = "events">
-      tsetttttttttttttttttttt
-    </div>
-    </div>
+  </div>
 
+<!-- Row 4 -->
+  <div class = "row"> 
+    <div class="col-sm-12"> <!-- COL 12 -->
 
-  <div class="row" id ="bottom"> <!-- ROW 3 -->
-    <div class="col-lg-12"> <!-- COL 12 -->
-      <footer>
-        <p class="text-center"> <strong> Donate Here </strong></p><a href="https://www.paypal.com"  target="_blank"><img src = "assets/css/paypal.svg" id = "paypal" align="middle"></a>
-      </footer>
+      <div id ="bottom"> <!-- ROW 3 -->
+        <footer>
+          <p class="text-center"> <strong> Donate Here </strong></p><a href="https://www.paypal.com"  target="_blank"><img src = "assets/css/paypal.svg" id = "paypal" align="middle"></a>
+        </footer>
+      </div>
+      
     </div>
   </div>
+
+</div>
 
 
 

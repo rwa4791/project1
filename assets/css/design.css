@@ -1,8 +1,32 @@
-#media {
-	border-left: 5px;
-    border-left-style: solid;
+h1{
+	font-family: 'PT Sans Caption', sans-serif;
+	color: black;
+	text-decoration: underline;
 }
 
+#events{
+	background-color: purple;
+}
+
+#media {
+	background-color: pink;
+}
+
+
+#events, #media, #news{
+	border-color: gray;
+	border-style: solid;
+}
+
+.card{
+	padding: 10px;
+}
+
+.row-3{
+	margin-top: 25px;
+}
+
+/*
 #person{
 	border-width:5px;
 	border-style: solid;
@@ -36,3 +60,4 @@ form{
 	border-width: 5px;
 	border-style: solid;
 }
+*/

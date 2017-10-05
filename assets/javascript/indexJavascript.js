@@ -2,7 +2,7 @@
 //---------- Javascript for Index page ----------//
 
 //---------- FIREBASE ----------//
-
+/*
 
 var config = {
   apiKey: "AIzaSyA_QypGPkcjPtylRDscf7-HQl8ribnFeIs", //DO WE NEED A DIFFERENT API KEY?//
@@ -17,6 +17,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+*/
 
 //---------- FUNCTIONS ----------//
 
@@ -56,8 +57,10 @@ function populateEventBrite(){
         }).done(function(response) {
           
           console.log(queryURL);
-          //console.log(response);
+          console.log(response);
 
+          $("#events").html("");
+          
         for (var i = 1; i < 4; i++){
 
           console.log("-------"+i+"-------");
