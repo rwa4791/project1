@@ -34,22 +34,32 @@ function clearInput(){
 //Eventbrite
 function populateEventBrite(){
 
-//volunteer input
-  var volunteer = $("#interests-input").val().trim();
-
   //Consumer API
   var token = "VKVUSW3OILCLJSHPXTDU";
+  //volunteer input
+  var volunteer = $("#interests-input").val().trim();
+  //zipcode input
+  var zipCode = $("#zipcode-input").val().trim();
+  //category ID
+  var CharityAndCauses = "111";
+  var CommunityAndCulture = "113";
+
+  var categoryID = CharityAndCauses +","+ CommunityAndCulture;
+
   //queryURL
-  var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token="+token+"&q="+volunteer+"&sort_by=distance&high_affinity_categories=117";
+  var queryURL = "https://www.eventbriteapi.com/v3/events/search/?token="+token+"&q="+volunteer+"&location.address="+zipCode+"&location.within=10mi&high_affinity_categories="+categoryID;
 
         //ajax call
         $.ajax({
           url: queryURL,
           method: "GET"
         }).done(function(response) {
-          console.log(response);
+          
+          console.log(queryURL);
+          //console.log(response);
         
         for (var i = 1; i < 4; i++){
+
           console.log("-------"+i+"-------");
           //event url on EventBrite
           console.log(response.events[i].url);
@@ -59,9 +69,9 @@ function populateEventBrite(){
           console.log(response.events[i].description.text);
           //src url logo of the event
           console.log(response.events[i].logo.url);
+
         };
         
-
       });
 
 };
