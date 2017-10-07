@@ -9,11 +9,12 @@ var authKey = "0670364e971b486b99620ae260687e00";
 var searchTerm = "";
 var numResults = 0;
 
+var interestsInput = $("#interests-input");
 
 // queryURLBase is the start of our API endpoint. The searchTerm will be appended to this when
 // the user hits the search button
 var queryURLBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
-  authKey + "&q=interests-input";
+  authKey + "&q=" + interestsInput;
 
 // Counter to keep track of article numbers as they come in
 var articleCounter = 0;
@@ -105,6 +106,9 @@ $("#run-search").on("click", function(event) {
   // This way we can hit enter on the keyboard and it registers the search
   // (in addition to clicks).
   event.preventDefault();
+
+  var interestsInput = $("#interests-input");
+  console.log("-----"+ interestsInput +"-----");
 
   // Initially sets the articleCounter to 0
   articleCounter = 0;
