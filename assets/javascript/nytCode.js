@@ -26,8 +26,8 @@ function runQuery(numArticles, queryURL) {
 
   // The AJAX function uses the queryURL and GETS the JSON data associated with it.
   // The data then gets stored in the variable called: "NYTData"
-
-  $.ajax({
+debugger;
+ $.ajax({
     url: queryURL,
     method: "GET"
   }).done(function(NYTData) {
