@@ -1,3 +1,8 @@
+#belowJumbotron{
+	position: relative;
+	top: -100px;
+}
+
 #footerNav{
 	height: 65px;
 }
@@ -17,8 +22,14 @@ body{
 }
 
 .jumbotron{
-	height: 80%;
+	height: 60%;
 	opacity: 0.6;
+	z-index: 0;
+}
+
+#jumbotronFront{
+	position: relative;
+	top: -257px;
 }
 
 h1{
