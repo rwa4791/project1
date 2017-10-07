@@ -1,29 +1,69 @@
+#footerNav{
+	height: 65px;
+}
+
+#row2{
+	position: relative;
+	bottom: 30px;
+}
+
+#run-search{
+	width: 200px;
+}
+
+body{
+	background-image: URL("../images/abstractPASTEL.jpg");
+	opacity: 0.95;
+}
+
+.jumbotron{
+	height: 80%;
+	opacity: 0.6;
+}
+
 h1{
 	font-family: 'PT Sans Caption', sans-serif;
 	color: black;
-	text-decoration: underline;
-}
-
-#events{
-	background-color: purple;
-}
-
-#media {
-	background-color: pink;
-}
-
-
-#events, #media, #news{
-	border-color: gray;
-	border-style: solid;
+	opacity: 1.0;
 }
 
 .card{
 	padding: 10px;
 }
 
-.row-3{
-	margin-top: 25px;
+.row3{
+	margin-top: 5px;
+}
+
+#paypal{
+	width: 80px;
+}
+
+.footerCenter{
+	position:relative;
+	left: 500px;
+}
+
+#formDiv{
+	height: 400px;
+}
+
+#events{
+	height: 422px;
+}
+
+#news, #recentSearches{
+	height: 400px;
+	margin-bottom: 40px;
+}
+
+.navbar-brand, label{
+	font-weight: 500;
+}
+
+.card-header{
+	color: white;
+	font-weight: 500;
 }
 
 /*
