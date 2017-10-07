@@ -3,16 +3,17 @@
 
 // This variable will be pre-programmed with our authentication key
 // (the one we received when we registered)
-var authKey = "b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
+var authKey = "0670364e971b486b99620ae260687e00";
 
 // These variables will hold the results we get from the user's inputs via HTML
 var searchTerm = "";
+var numResults = 0;
 
 
 // queryURLBase is the start of our API endpoint. The searchTerm will be appended to this when
 // the user hits the search button
 var queryURLBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
-  authKey + "&q=";
+  authKey + "&q=interests-input";
 
 // Counter to keep track of article numbers as they come in
 var articleCounter = 0;
@@ -26,7 +27,6 @@ function runQuery(numArticles, queryURL) {
 
   // The AJAX function uses the queryURL and GETS the JSON data associated with it.
   // The data then gets stored in the variable called: "NYTData"
-debugger;
  $.ajax({
     url: queryURL,
     method: "GET"
@@ -51,7 +51,7 @@ debugger;
       var newsselection = $("<div>");
       newsselection.addClass("news1");
       newsselection.attr("id", "article-news1" + articleCounter);
-      $("#news1").append(newsselection);
+      $("#newsselection").append(newsselection);
 
       // Confirm that the specific JSON for the article isn't missing any details
       // If the article has a headline include the headline in the HTML
@@ -118,7 +118,7 @@ $("#run-search").on("click", function(event) {
   var queryURL = queryURLBase + searchTerm;
 
   // Number of results the user would like displayed
-  numResults = $("#num-records-select").val();
+  numResults = 5;
 
  
   // Then we will pass the final queryURL and the number of results to
