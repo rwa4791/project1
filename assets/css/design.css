@@ -101,3 +101,8 @@ form{
 	border-style: solid;
 }
 */
+
+.opportunities, .sources, .searches {
+            overflow-y: scroll;
+            
+        }
