@@ -115,7 +115,7 @@ function populateEventBrite(){
 function populateNYT() {
 
   //number of articles to populate
-  var numArticles = 3;
+  var numArticles = 10;
 
   //API key
   var authKey = "0670364e971b486b99620ae260687e00";
@@ -151,15 +151,29 @@ function populateNYT() {
           // Create the HTML well (section) and add the article content for each
           var newsDiv = $("<div>");
           newsDiv.addClass("news" + [i]);
+          newsDiv.addClass("alert");
+          newsDiv.addClass("alert-secondary");
           newsDiv.attr("id", "data-news" + [i]);
           $("#news").append(newsDiv);
+
+          //take the date and convert it to more readable text
+          var PubDate = NYTData.response.docs[i].pub_date;
+          var newPubDate = PubDate.slice(0,10);
+          moment(newPubDate).format("YYYY-MM-DD");
+          var clearPubDate = moment(newPubDate).format("MMMM Do YYYY");
+
+          //put clear date in div as badge
+          $("#data-news" + [i])
+            .append("<h3 class='badge badge-light'>" + clearPubDate + "</h3>");
+
+          //grab article URL
+          var articleURL = NYTData.response.docs[i].web_url;
 
           if (NYTData.response.docs[i].headline !== "null") {
               $("#data-news" + [i])
                 .append(
-                  "<h3 class='articleHeadline'><span class='label label-primary'>" +
-                  [i] + "</span><strong> " +
-                  NYTData.response.docs[i].headline.main + "</strong></h3>"
+                  "<h4 class='articleHeadline alert-heading'><a target='_blank' href='"+articleURL+"'><strong> " +
+                  NYTData.response.docs[i].headline.main + "</a></strong></h4>"
                 );
           };
 
@@ -170,16 +184,6 @@ function populateNYT() {
 
           };
 
-          // Then display the remaining fields in the HTML (Section Name, Date, URL)
-          $("#data-news" + [i])
-            .append("<h5>Section: " + NYTData.response.docs[i].section_name + "</h5>");
-          $("#data-news" + [i])
-            .append("<h5>" + NYTData.response.docs[i].pub_date + "</h5>");
-          $("#data-news" + [i])
-            .append(
-              "<a href='" + NYTData.response.docs[i].web_url + "'>" +
-              NYTData.response.docs[i].web_url + "</a>"
-          );
 
         };
         

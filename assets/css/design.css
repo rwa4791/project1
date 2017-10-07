@@ -1,6 +1,6 @@
 #belowJumbotron{
 	position: relative;
-	top: -100px;
+	top: -210px;
 }
 
 #footerNav{
@@ -12,7 +12,7 @@
 	bottom: 30px;
 }
 
-#run-search{
+#run-search, .badge{
 	width: 200px;
 }
 
@@ -22,14 +22,19 @@ body{
 }
 
 .jumbotron{
-	height: 60%;
+	height: 40%;
 	opacity: 0.6;
 	z-index: 0;
 }
 
 #jumbotronFront{
 	position: relative;
-	top: -257px;
+	top: -200px;
+}
+
+#jumbotronBack{
+	position: relative;
+	top: -38px;
 }
 
 h1{
@@ -75,6 +80,17 @@ h1{
 .card-header{
 	color: white;
 	font-weight: 500;
+}
+
+h4{
+	text-decoration: underline;
+}
+
+a{
+	color: black;
+}
+a:hover{
+	color:purple;
 }
 
 /*
