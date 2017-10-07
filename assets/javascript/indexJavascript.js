@@ -2,19 +2,20 @@
 //---------- Javascript for Index page ----------//
 
 //---------- FIREBASE ----------//
-/*var config = {
-  apiKey: "AIzaSyBO52H3c_T6Mu5QtfDF74KIfA_xUm0jXpo",
-  authDomain: "volunteerpulse-6159c.firebaseapp.com",
-  databaseURL: "https://volunteerpulse-6159c.firebaseio.com",
-  projectId: "volunteerpulse-6159c",
-  storageBucket: "volunteerpulse-6159c.appspot.com",
-  messagingSenderId: "914573645298"
+var config = {
+    apiKey: "AIzaSyCxj--6HQZ_BVT0BBfeYpDY_C6ZnWSA3fA",
+    authDomain: "volunteer-dc3b7.firebaseapp.com",
+    databaseURL: "https://volunteer-dc3b7.firebaseio.com",
+    projectId: "volunteer-dc3b7",
+    storageBucket: "volunteer-dc3b7.appspot.com",
+    messagingSenderId: "915346429716"
   };
-  firebase.initializeApp(config);
+ 
+ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-$("#.submit-button").on("click", function(event){
+$("#run-search").on("click", function(event){
   event.preventDefault();
   name = $("#name-input").val().trim();
   email = $("#email-input").val().trim();
@@ -27,14 +28,7 @@ $("#.submit-button").on("click", function(event){
       zipCode: zipCode,
       interest: interest
     });
-
-
-database.ref().on("child_added", function(snapshot) {
- console.log(snapshot.val());
- console.log(snapshot.val().interest);
-$("#recentSearches").html(snapshot.val().interest);
-
-*/
+ });
 
 //--------- GLOBAL --------//
 
