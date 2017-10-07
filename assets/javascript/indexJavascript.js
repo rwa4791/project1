@@ -30,7 +30,6 @@ $("#run-search").on("click", function(event){
     });
  });
 
-//--------- GLOBAL --------//
 
 //---------- FUNCTIONS ----------//
 
@@ -45,13 +44,13 @@ function clearInput(){
 }
 
 //Eventbrite
-function populateEventBrite(){
+function populateEventBrite(volunteer){
 
   //Consumer API
   var token = "VKVUSW3OILCLJSHPXTDU";
   //volunteer input
-  var volunteer = $("#interests-input").val().trim();
-  console.log("VOLUNTEER: " +volunteer);
+  //var volunteer = $("#interests-input").val().trim();
+  //console.log("VOLUNTEER: " +volunteer);
   //zipcode input
   var zipCode = $("#zipcode-input").val().trim();
   //category ID
@@ -82,12 +81,13 @@ function populateEventBrite(){
           console.log(response.events[i].name.text);
           var eventName = response.events[i].name.text;
 
-          //event url on EventBrite
-          console.log(response.events[i].url);
+          //event URL
           var eventURL = response.events[i].url;
 
           //event description
           console.log(response.events[i].description.text);
+          var eventDescription = response.events[i].description.text;
+          var eventDisplay = eventDescription.slice(0,200) + "... ";
 
           //src url logo of the event
           console.log(response.events[i].logo.url);
@@ -95,24 +95,50 @@ function populateEventBrite(){
 
           //create a div to hold the events
           var eventDiv = $("<div>");
-
-          eventDiv.html("<h3>" + eventName + "</h3>");
-
-          eventDiv.attr("data-item", [i]);
-
+          eventDiv.addClass("events" + [i]);
+          eventDiv.addClass("alert");
+          eventDiv.addClass("alert-secondary");
+          eventDiv.attr("id", "data-events" + [i]);
           $("#events").append(eventDiv);
+
+          console.log("START TIME: "+response.events[i].start.local);
+          //take the date and convert it to more readable text
+          var EventDate = response.events[i].start.local;
+
+          var newEventDate = EventDate.slice(0,10);
+          var newEventTime = EventDate.slice(11, EventDate.length);
+
+          moment(newEventDate).format("YYYY-MM-DD");
+          moment(newEventTime).format("HH:mm:ss");
+
+          var clearEventDate = moment(newEventDate).format("ddd MM/DD/YYYY");
+
+          var clearEventFinal = clearEventDate + ", " + newEventTime;
+
+
+          //put clear date in div as badge
+          $("#data-events" + [i])
+            .append("<h3 class='badge badge-light'>" + clearEventFinal + "</h3>");
+
+          //event name header        
+          $("#data-events" + [i])
+            .append(
+              "<h4 class='articleHeadline alert-heading'><a target='_blank' href='"+eventURL+"'><strong> " +
+              eventName + "</a></strong></h4>"
+          );
           
-        };
+          $("#data-events" + [i])
+              .append("<h8>" + eventDisplay + "</h8>");
 
+          };
 
-        
       });
 
 };
 
 //---------- NYT -----------//
 //NYT
-function populateNYT() {
+function populateNYT(volunteer) {
 
   //number of articles to populate
   var numArticles = 10;
@@ -121,7 +147,7 @@ function populateNYT() {
   var authKey = "0670364e971b486b99620ae260687e00";
 
   // Grabbing text the user typed into the search input
-  var volunteer = $("#interests-input").val().trim();
+  //var volunteer = $("#interests-input").val().trim();
 
   //queryURL
   var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
@@ -177,13 +203,14 @@ function populateNYT() {
                 );
           };
 
-          // If the article has a byline include the headline in the HTML
+          // If the article has a byline include the headline in the HTML and snippet
           if (NYTData.response.docs[i].byline && NYTData.response.docs[i].byline.original) {
             $("#data-news" + [i])
               .append("<h5>" + NYTData.response.docs[i].byline.original + "</h5>");
+            $("#data-news" + [i])
+              .append("<h8>" + NYTData.response.docs[i].snippet + "</h8>");
 
           };
-
 
         };
         
@@ -192,27 +219,35 @@ function populateNYT() {
 };
 
 
-//---------- API Calls ----------//
+//---------- ON PAGE LOAD ----------//
 
-//
+$(window).load(function() {
 
+  var volunteer = "volunteer";
 
+  populateNYT(volunteer);
+
+  populateEventBrite(volunteer);
 
 
 //---------- CLICK EVENTS ----------//
 
-$(".submit-button").on("click", function(event){
+  $(".submit-button").on("click", function(event){
 
-  event.preventDefault();
+    event.preventDefault();
 
-  populateNYT();
+    var volunteer = $("#interests-input").val().trim();
 
-  populateEventBrite();
+    populateNYT(volunteer);
 
-  clearInput();
+    populateEventBrite(volunteer);
+
+    clearInput();
+
+  });
+
 
 });
-
 
 
   
