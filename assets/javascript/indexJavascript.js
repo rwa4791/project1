@@ -31,9 +31,10 @@ $("#run-search").on("click", function(event){
  });
 
 
-//---------- FUNCTIONS ----------//
+// // //---------- FUNCTIONS ----------// // //
 
-// Clears all of the text-boxes
+
+//---------- CLEAR TEXT BOXES ----------//
 function clearInput(){
 
   $("#name-input").val("");
@@ -43,8 +44,8 @@ function clearInput(){
 
 }
 
-//Eventbrite
-function populateEventBrite(volunteer){
+//---------- EVENTBRITE ----------//
+function populateEventBrite(zipCode, volunteer){
 
   //Consumer API
   var token = "VKVUSW3OILCLJSHPXTDU";
@@ -52,7 +53,7 @@ function populateEventBrite(volunteer){
   //var volunteer = $("#interests-input").val().trim();
   //console.log("VOLUNTEER: " +volunteer);
   //zipcode input
-  var zipCode = $("#zipcode-input").val().trim();
+  //var zipCode = $("#zipcode-input").val().trim();
   //category ID
   var CharityAndCauses = "111";
   var CommunityAndCulture = "113";
@@ -221,14 +222,21 @@ function populateNYT(volunteer) {
 
 //---------- ON PAGE LOAD ----------//
 
-$(window).load(function() {
+function pageLoad(){
 
   var volunteer = "volunteer";
 
+  var zipCode = "10007";
+
   populateNYT(volunteer);
 
-  populateEventBrite(volunteer);
+  populateEventBrite(zipCode, volunteer);
 
+};
+
+//---------- CALLED FUNCTIONS ----------//
+
+window.onload = pageLoad();
 
 //---------- CLICK EVENTS ----------//
 
@@ -238,16 +246,17 @@ $(window).load(function() {
 
     var volunteer = $("#interests-input").val().trim();
 
+    var zipCode = $("#zipcode-input").val().trim();
+
     populateNYT(volunteer);
 
-    populateEventBrite(volunteer);
+    populateEventBrite(zipCode, volunteer);
 
     clearInput();
 
   });
 
 
-});
 
 
   
