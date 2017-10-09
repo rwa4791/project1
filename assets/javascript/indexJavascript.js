@@ -42,7 +42,11 @@ function clearInput(){
   $("#zipcode-input").val("");
   $("#interests-input").val("");
 
-}
+};
+
+//---------- FACEBOOK ----------//
+
+
 
 //---------- EVENTBRITE ----------//
 function populateEventBrite(zipCode, volunteer){
@@ -137,6 +141,7 @@ function populateEventBrite(zipCode, volunteer){
 
 };
 
+
 //---------- NYT -----------//
 //NYT
 function populateNYT(volunteer) {
@@ -187,7 +192,7 @@ function populateNYT(volunteer) {
           var PubDate = NYTData.response.docs[i].pub_date;
           var newPubDate = PubDate.slice(0,10);
           moment(newPubDate).format("YYYY-MM-DD");
-          var clearPubDate = moment(newPubDate).format("MMMM Do YYYY");
+          var clearPubDate = moment(newPubDate).format("ddd MM/DD/YYYY");
 
           //put clear date in div as badge
           $("#data-news" + [i])
