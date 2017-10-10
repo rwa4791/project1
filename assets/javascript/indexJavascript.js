@@ -241,8 +241,6 @@ function pageLoad(){
 
   populateEventBrite(zipCode, volunteer);
 
-  populateGooglePlaces(volunteer)
-
 };
 
 //---------- CALLED FUNCTIONS ----------//
