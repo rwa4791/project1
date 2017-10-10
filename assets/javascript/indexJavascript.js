@@ -44,7 +44,11 @@ function clearInput(){
 
 };
 
-//---------- FACEBOOK ----------//
+
+//---------- FIREBASE ----------//
+
+
+
 
 
 
@@ -237,6 +241,8 @@ function pageLoad(){
 
   populateEventBrite(zipCode, volunteer);
 
+  populateGooglePlaces(volunteer)
+
 };
 
 //---------- CALLED FUNCTIONS ----------//
@@ -259,20 +265,24 @@ window.onload = pageLoad();
 
     clearInput();
 
+    var i = 0;
 
 // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
     database.ref().limitToLast(5).on("child_added", function(snapshot) {
       // storing the snapshot.val() in a variable for convenience
       var sv = snapshot.val();
 
-      console.log(sv);
-
-      
+      console.log("------- SV -------");
       console.log(sv.interest);
 
-     
-      $(".searches").append("<p>"+sv.interest+"</p>");
+      $("#data-search"+i).html(sv.interest);
+      $("#data-search"+i).addClass("badge");
+      $("#data-search"+i).addClass("searchBadge");
+      $("#data-search"+i).addClass("badge-light");
+      //$(".searches").append("<p id='searchP'></p>");
+      //$("#searchP").append("| " + sv.interest + " |");
 
+      i++;
       
     }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);

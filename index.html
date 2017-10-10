@@ -33,10 +33,13 @@
 
   <!-- NAV BAR -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Volunteer Pulse</a>
+
+    <a class="navbar-brand" href="index.html">Volunteer Pulse  <img src = "heart.png" width="50px"> </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -57,124 +60,100 @@
         </li>
       </ul>
     </div>
+
   </nav>
 
 <!-- Container -->
 <div class="container">
 
-  <!-- Row 1 -->
-    <div class="row"> 
-      <div class="col-sm-12"> <!-- COL 12 -->
-
-        <!-- JUMBOTRON -->
-      	<div class="jumbotron jumbotron-fluid text-center">
-          <div class="container" id="jumbotronBack">
-            <h1 class="display-3"> Volunteer Pulse <img src = "heart.png" width="150px"> </h1>
-          </div>
-        </div>
-
-        <h1 id="jumbotronFront" class="display-3 text-center"> Volunteer Pulse <img src = "heart.png" width="150px"></h1>
-
-      </div>
-    </div>
-
-  <div id="belowJumbotron">
-
-  <!-- Row 2 -->
-    <div class = "row" id="row2"> 
+    <div class = "row" id="row1"> <!--ROW 1-->
 
       <div class="col-sm-5"> <!-- COL 5 -->
-          <div class="card border border-secondary">
+        
+        <div class="row">
+        
+          <div class="col-sm-12">
+            <div class="card border border-secondary">
+              <form>
+                <div id="formDiv">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" id="name-input" placeholder="First Last">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="zipCode">Zip Code</label>
+                    <input type="text" class="form-control" id="zipcode-input" placeholder="Zip Code">
+                  </div>
+                  <div class="form-group">
+                    <label for="volunteerInterest">Volunteer Interest</label>
+                    <input type="text" class="form-control" id="interests-input" placeholder="What are you passionate about?">
+                  </div>
+                  <div class="card-footer text-center">
+                    <button type="submit" class="btn btn-secondary submit-button" id = "run-search">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="row">
+          <div class="col-sm-12">
 
-            <form>
-              <div id="formDiv">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                  <input type="text" class="form-control" id="name-input" placeholder="First Last">
+              <div class="card border border-info">
+                <div class="card-header bg-info">
+                News Sources
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="zipCode">Zip Code</label>
-                  <input type="text" class="form-control" id="zipcode-input" placeholder="Zip Code">
-                </div>
-                <div class="form-group">
-                  <label for="volunteerInterest">Volunteer Interest</label>
-                  <input type="text" class="form-control" id="interests-input" placeholder="What are you passionate about?">
-                </div>
-                <!--<div class="form-check">
-                  <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input">
-                    I Am Okay With My Information Being Shared.
-                  </label>
-                </div>-->
-                <div class="card-footer text-center">
-                  <button type="submit" class="btn btn-secondary submit-button" id = "run-search">Submit</button>
-                  <!--<button type="reset" class="btn btn-primary submit-button" id = "run-search"> reset</button>-->
+
+                <div class="card-body sources" id="news"> 
                 </div>
               </div>
-            </form>
 
-          </div>   
-      </div> 
+          </div>
+        </div>
+
+      </div>
 
       <div class="col-sm-7"> <!-- COL 7 -->
-          <div class="card border border-info">
 
-              <div class="card-header bg-info">
-              Opportunities Near You
+        <div class="row"> <!-- ROW 1.1 -->
+          <div class="col-sm-12">
+
+              <div id="recentSearches" class="card border border-secondary">
+                <div class="card-header bg-secondary">
+                  Recent Searches
+                </div>
+                <div class="card-body searches">
+                  <span id="data-search1"></span>
+                  <span id="data-search2"></span>
+                  <span id="data-search3"></span>
+                  <span id="data-search4"></span>
+                  <span id="data-search5"></span>
+                </div>
               </div>
-
-              <div class="card-body opportunities" id="events">
-
-                <p> 
-                  
-                </p>
-
-              </div>
-          </div>
-      </div>
-
-  </div>
-
-
-  <!-- Row 3 -->
-    <div class = "row row3"> 
-
-      <div class="col-sm-9"> <!-- COL 9 -->
-          <div class="card border border-info">
-
-            <div class="card-header bg-info">
-            News Sources
-            </div>
-
-            <div class="card-body sources" id="news">
-              
-            </div>
-
-          </div>
-      </div>
-
-      <div class="col-sm-3"> <!-- COL 3 -->
-        <div id="recentSearches" class="card border border-secondary">
-
-          <div class="card-header bg-secondary">
-            Recent Searches
-          </div>
-
-          <div class="card-body searches">
-            
-          </div>
           
+          </div>
         </div>
+
+        <div class="row"> <!-- ROW 1.2 -->
+          <div class="col-sm-12">
+            <div class="card border border-info">
+              <div class="card-header bg-info">
+                  Opportunities Near You
+              </div>
+              <div class="card-body opportunities" id="events">
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
-
-  </div>
   
-</div>
-
+    </div>
 </div>
 
 <!-- FOOTER -->

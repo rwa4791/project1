@@ -1,16 +1,40 @@
-#belowJumbotron{
-	position: relative;
-	top: -210px;
+.card{
+	margin-top: 25px;
+	padding: 10px;
 }
+
+.card-header{
+	color: white;
+	font-weight: 500;
+}
+
+.searchBadge{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#news {
+	height: 200px;
+}
+
+#events{
+	height: 475px;
+}
+
+#places{
+	height: 250px;
+}
+
+#recentSearches{
+	height: 155px;
+}
+
 
 #footerNav{
 	height: 65px;
+	margin-top: 25px;
 }
 
-#row2{
-	position: relative;
-	bottom: 30px;
-}
 
 #run-search, .badge{
 	width: 200px;
@@ -21,34 +45,11 @@ body{
 	opacity: 0.95;
 }
 
-.jumbotron{
-	height: 40%;
-	opacity: 0.6;
-	z-index: 0;
-}
-
-#jumbotronFront{
-	position: relative;
-	top: -200px;
-}
-
-#jumbotronBack{
-	position: relative;
-	top: -38px;
-}
 
 h1{
 	font-family: 'PT Sans Caption', sans-serif;
 	color: black;
 	opacity: 1.0;
-}
-
-.card{
-	padding: 10px;
-}
-
-.row3{
-	margin-top: 5px;
 }
 
 #paypal{
@@ -60,25 +61,7 @@ h1{
 	left: 500px;
 }
 
-#formDiv{
-	height: 400px;
-}
-
-#events{
-	height: 422px;
-}
-
-#news, #recentSearches{
-	height: 400px;
-	margin-bottom: 40px;
-}
-
 .navbar-brand, label{
-	font-weight: 500;
-}
-
-.card-header{
-	color: white;
 	font-weight: 500;
 }
 
@@ -90,46 +73,10 @@ a{
 	color: black;
 }
 a:hover{
-	color:purple;
+	color: #B388EB;
 }
-
-/*
-#person{
-	border-width:5px;
-	border-style: solid;
-	padding: 5px;
-}
-.social{
-	height:50px;
-	width:50px;
-}
-footer{
-	border-width:5px;
-	border-style: solid;
-}
-
-#last{
-	margin-top: 200px;
-}
-
-#bottom{
-	margin-top: 10px;
-}
-
-#paypal{
-	height:150px;
-	width:150px;
-	  display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-}
-form{
-	border-width: 5px;
-	border-style: solid;
-}
-*/
 
 .opportunities, .sources, .searches {
             overflow-y: scroll;
-            
-        }
+}
+
