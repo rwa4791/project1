@@ -259,6 +259,26 @@ window.onload = pageLoad();
 
     clearInput();
 
+
+// Firebase watcher + initial loader + order/limit HINT: .on("child_added"
+    database.ref().limitToLast(5).on("child_added", function(snapshot) {
+      // storing the snapshot.val() in a variable for convenience
+      var sv = snapshot.val();
+
+      console.log(sv);
+
+      
+      console.log(sv.interest);
+
+     
+      $(".searches").append("<p>"+sv.interest+"</p>");
+
+      
+    }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
+
   });
 
 
