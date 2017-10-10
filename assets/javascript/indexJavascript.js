@@ -263,7 +263,7 @@ window.onload = pageLoad();
 
     clearInput();
 
-    var i = 0;
+    var i = 1;
 
 // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
     database.ref().limitToLast(5).on("child_added", function(snapshot) {
@@ -277,8 +277,6 @@ window.onload = pageLoad();
       $("#data-search"+i).addClass("badge");
       $("#data-search"+i).addClass("searchBadge");
       $("#data-search"+i).addClass("badge-light");
-      //$(".searches").append("<p id='searchP'></p>");
-      //$("#searchP").append("| " + sv.interest + " |");
 
       i++;
       
