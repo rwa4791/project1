@@ -266,7 +266,7 @@ window.onload = pageLoad();
     var i = 1;
 
 // Firebase watcher + initial loader + order/limit HINT: .on("child_added"
-    database.ref().limitToLast(5).on("child_added", function(snapshot) {
+    database.ref().limitToLast(10).on("child_added", function(snapshot) {
       // storing the snapshot.val() in a variable for convenience
       var sv = snapshot.val();
 
