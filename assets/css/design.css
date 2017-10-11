@@ -9,24 +9,35 @@
 }
 
 .searchBadge{
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-right: 10px;
 }
 
 #news {
-	height: 200px;
+	height: 330px;
 }
 
 #events{
-	height: 475px;
+	height: 500px;
 }
 
-#places{
-	height: 250px;
+#formDiv{
+	height: 375px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+#heartPic{
+	opacity: 0.6;
+}
+
+.submit-button{
+	height: 35px;
 }
 
 #recentSearches{
-	height: 155px;
+	height: 200px;
+	width: 250px;
 }
 
 
@@ -38,6 +49,11 @@
 
 #run-search, .badge{
 	width: 200px;
+}
+
+#run-search{
+	position: relative;
+	bottom: 10px;
 }
 
 body{
@@ -80,3 +96,22 @@ a:hover{
             overflow-y: scroll;
 }
 
+#aboutDiv, #contactDiv{
+	margin: 25px;
+}
+
+.contactHeader{
+	color:black;
+}
+.contactHeader:hover{
+	color:#B388EB;
+}
+.contactCard{
+	margin-bottom:100px;
+}
+
+.social{
+	width: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}

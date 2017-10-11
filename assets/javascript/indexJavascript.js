@@ -216,7 +216,7 @@ function populateNYT(volunteer) {
           // If the article has a byline include the headline in the HTML and snippet
           if (NYTData.response.docs[i].byline && NYTData.response.docs[i].byline.original) {
             $("#data-news" + [i])
-              .append("<h5>" + NYTData.response.docs[i].byline.original + "</h5>");
+              .append("<h8><strong>" + NYTData.response.docs[i].byline.original + "</strong></h8><br>");
             $("#data-news" + [i])
               .append("<h8>" + NYTData.response.docs[i].snippet + "</h8>");
 
