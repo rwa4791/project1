@@ -79,7 +79,7 @@ function clearInput(){
 function populateEventBrite(zipCode, volunteer){
 
   //Consumer API
-  var token = "VKVUSW3OILCLJSHPXTDU";
+  var token = "XPFHCOZNPRBFK3JWEG7L";
   //volunteer input
   //var volunteer = $("#interests-input").val().trim();
   //console.log("VOLUNTEER: " +volunteer);
