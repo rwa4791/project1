@@ -2,15 +2,15 @@
 //---------- Javascript for Index page ----------//
 
 //---------- FIREBASE ----------//
-  var firebaseConfig = {
-    apiKey: "AIzaSyBO52H3c_T6Mu5QtfDF74KIfA_xUm0jXpo",
-    authDomain: "volunteerpulse-6159c.firebaseapp.com",
-    databaseURL: "https://volunteerpulse-6159c.firebaseio.com",
-    projectId: "volunteerpulse-6159c",
-    storageBucket: "volunteerpulse-6159c.appspot.com",
-    messagingSenderId: "914573645298",
-    appId: "1:914573645298:web:8fca64020ed405fac7476b"
-  };
+const firebaseConfig = {
+  apiKey: "AIzaSyBO52H3c_T6Mu5QtfDF74KIfA_xUm0jXpo",
+  authDomain: "volunteerpulse-6159c.firebaseapp.com",
+  databaseURL: "https://volunteerpulse-6159c.firebaseio.com",
+  projectId: "volunteerpulse-6159c",
+  storageBucket: "volunteerpulse-6159c.appspot.com",
+  messagingSenderId: "914573645298",
+  appId: "1:914573645298:web:8fca64020ed405fac7476b"
+};
  firebase.initializeApp(config);
 
 var database = firebase.database();
